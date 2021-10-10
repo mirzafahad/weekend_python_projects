@@ -24,8 +24,10 @@ def receive_sms():
     else:
         output = ("Sorry we could not understand your response. "
                   "You can respond with 'joke' to get a random joke, "
-                  "'joke neutral' to get a neutral joke, 'joke twister' to "
-                  "get the a tongue-twister joke.\n\nHave a great day!")
+                  "'joke neutral' to get a neutral joke, 'joke chuck' to "
+                  "get a Chuck Norris joke.\n\nBut here is a joke anyway!\n\n")
+        output += pyjokes.get_joke(language="en", category="all")
+
     resp.message(output)
     return str(resp)
 
